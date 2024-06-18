@@ -1,4 +1,4 @@
-# Curso Basico GoLang
+# Curso Básico GoLang
 
 Introducción
 
@@ -8,26 +8,26 @@ Introducción
 
 Go, también conocido como GoLang, es un lenguaje de programación creado por Google. Combina la eficiencia en la ejecución de los lenguajes compilados con la facilidad de uso y eficiencia de los lenguajes interpretados. Go se destaca por su simplicidad, eficiencia y capacidad para manejar concurrencia, lo que lo hace ideal para aplicaciones de servidor y microservicios.
 
-## Por que Aprenderlo?
+## ¿Por qué Aprenderlo?
 
 - Gran velocidad de compilación
 - Alto rendimiento para tareas pesadas
 - Soporte nativo por concurrencia
 - Bien pagado
-- Obliga a implementar buenas practicas
+- Obliga a implementar buenas prácticas
 - Buena Comunidad
 
-## Instalacion
+## Instalación
 
-Instalar para windows desde aqui:
+Instala para windows desde aquí:
 
 [All releases - The Go Programming Language](https://go.dev/dl/)
 
-Podemos crear nuestra app desde cualquier dirección. 
+Podemos crear nuestra app desde cualquier dirección.
 
-Los paquetes se instalaran en C:/USER/go
+Los paquetes se instalarán en C:/USER/go
 
-Abrimos desde VSCode y instalamos la siguiente extensión:
+Abrimos desde VSCode e instalamos la siguiente extensión:
 
 Nombre: Go
 ID: golang.Go
@@ -38,7 +38,7 @@ Vínculo de VS Marketplace: [https://marketplace.visualstudio.com/items?itemName
 
 ## Primera App
 
-luego de crear una carpeta en el directorio q queramos. Creamos el archivo main.go.
+Luego de crear una carpeta en el directorio que queramos. Creamos el archivo main.go.
 
 ```go
 // Paquete: Contenedor de funciones y variables
@@ -55,11 +55,11 @@ func main() {
 
 ```
 
-corremos el código con ‘go run main.go’.
+Corremos el código con ‘go run main.go’.
 
-o con ‘go build main.go’ eso creara un archivo main. escribimos ./main y se ejecutara el programa.
+O con ‘go build main.go’ eso creará un archivo main. Escribimos ./main y se ejecutará el programa.
 
-muy exigente con las buenas practicas. da error: espacios en blanco, llaves mal posicionadas.
+Muy exigente con las buenas prácticas. Da error: espacios en blanco, llaves mal posicionadas.
 
 ```go
 //permite
@@ -70,23 +70,24 @@ func main()
 {
 
 }
-//en el caso de los espacios la extencion los elimina
+//en el caso de los espacios la extensión los elimina
 func main(){
 /
 /
 	fmt.Println('');
 
 }
+
 ```
 
 ## Variables, constantes y zero values
 
-- Paso previo: inicializar git. Con git init en la terminal, ubicado en nuestra carpeta raiz.
-- git add ‘nombre de la app o carpeta’. en mi caso git add clase1.(en la carpeta clase1 tengo main.go).
+- Paso previo: inicializar git. Con git init en la terminal, ubicado en nuestra carpeta raíz.
+- git add ‘nombre de la app o carpeta’. En mi caso git add clase1.(en la carpeta clase1 tengo main.go).
 
 ### Declarar Constantes
 
-Una constante es una variable que nunca va a cambiar su valor en el tiempo. si se reasigna un valor dará error.
+Una constante es una variable que nunca va a cambiar su valor en el tiempo. Si se reasigna un valor dará error.
 
 Recuerda que go es un lenguaje estáticamente tipado. Debes indicarle el tipo de dato y variables.
 
@@ -119,15 +120,17 @@ base := 12
 base = 12
 //no declarada previamente
 base := 12
+
 ```
 
-El metodo mas común para declarar es con la palabra reservada var y su tipo de dato.
+El método más común para declarar es con la palabra reservada var y su tipo de dato.
 
 ```go
-//declaracion e inicializacion
+//declaración e inicialización
 var altura int = 14;
-//solo declaracion
+//solo declaración
 var area int
+
 ```
 
 ### Zero values
@@ -144,17 +147,18 @@ var d bool // variables true o false
  Esto es lo que retorna
  0 0  false
 */
+
 ```
 
 ### Ejercicio
 
-Calcular el area de un cuadrado. Sabiendo que su base mide 10.
+Calcular el área de un cuadrado. Sabiendo que su base mide 10.
 
-ignorando la unidad de medida, calcule el area.
+Ignorando la unidad de medida, calcule el área.
 
-Sabemos que la base y la altura de un cuadrado son iguales. Por lo tanto la formula quedaria.
+Sabemos que la base y la altura de un cuadrado son iguales. Por lo tanto la fórmula quedaría.
 
-Area = base x base ;
+Área = base x base ;
 
 ```go
 package main
@@ -162,7 +166,7 @@ package main
 import "fmt"
 
 func main() {
-	//Ejercicio Area cuadrado
+	//Ejercicio Área cuadrado
 	const baseCuadrado int = 10
 	areaCuadrado := baseCuadrado * baseCuadrado
 	fmt.Println("Area =", areaCuadrado)
@@ -170,7 +174,7 @@ func main() {
 
 ```
 
-## Operadores Arigmeticos
+## Operadores Aritméticos
 
 ```go
 
@@ -185,11 +189,11 @@ fmt.Println(resultSuma)//60
 resultResta := x - y
 fmt.Println(resultResta)//-40
 
-//Multiplicacion
+//Multiplicación
 resultMulti := x * y
 fmt.Println(resultMulti)//500
 
-//Division
+//División
 resultDivision := y / x
 fmt.Println(resultDivision)//5
 
@@ -213,7 +217,7 @@ fmt.Println(x)
 
 - int = Depende del OS (32 o 64 bits)
 - int8 = 8 bits = -128 a 127
-- int16 = 16 bits =  -2^15 a 2^15 -1
+- int16 = 16 bits = -2^15 a 2^15 -1
 - int32 = 32 bits = -2^31 a 2^31 -1
 - int64 = 64 bits = -2^63 a 2^63 -1
 
@@ -245,20 +249,21 @@ fmt.Println(x)
 
 ### Println
 
-Un print normal con salto de linea al final.
+Un print normal con salto de línea al final.
 
 ```go
 func main() {
 	helloMessage := "Hello"
 	wordMessage := "Word"
 	//Println
-	fmt.Println(helloMesagge, wordMessage)//Hello Word
+	fmt.Println(helloMessage, wordMessage)//Hello Word
 }
+
 ```
 
 ### Printf
 
-A parte de imprimir agrega una funcion extra.
+A parte de imprimir agrega una función extra.
 
 The verbs:
 
@@ -280,7 +285,7 @@ func main(){
 }
 ```
 
-Como ves en el mensaje colocamos donde iran las dos variables con %s y %d. Luego del mensaje, separado de una coma,  indicamos que variables usamos en orden.
+Como ves en el mensaje colocamos donde irán las dos variables con %s y %d. Luego del mensaje, separado de una coma,  indicamos que variables usamos en orden.
 
 ### Sprintf
 
@@ -332,7 +337,7 @@ func main() {
 
 ### Exportar Nombres
 
-En go, un nombre es exportado si empieza con mayúscula. Por ejemplo Pizza es un nombre exportado, asi como Pi, que este ultimo es exportado desde el paquete math.
+En go, un nombre es exportado si empieza con mayúscula. Por ejemplo Pizza es un nombre exportado, así como Pi, que este ultimo es exportado desde el paquete math.
 
 pizza y pi como no empiezan con mayúscula no son nombres exportados de un paquete.
 
@@ -420,9 +425,9 @@ func main() {
 
 ### Funcion que retorna mas de un resultado
 
-Una funcion puede retornar cualquier numero de resultados.
+Una función puede retornar cualquier numero de resultados.
 
-La funcion swap retorna dos strings.
+La función swap retorna dos strings.
 
 ```go
 package main
@@ -440,7 +445,7 @@ func main() {
 
 ```
 
-como ves siempre se marca que tipo de dato que va a retornar y cuantos, entre parentesis.
+como ves siempre se marca que tipo de dato que va a retornar y cuantos, entre paréntesis.
 
 func swap(x, y string) (string, string).
 
@@ -530,7 +535,7 @@ Ejemplo: `2<0 || 1 > 0` Esto retornará TRUE porque la segunda condición se c
 
 ### Operador NOT:
 
-Este operador retornará el opuesto al boleano que está dentro de la variable. Ejemplo:
+Este operador retornará el opuesto al booleano que está dentro de la variable. Ejemplo:
 
 ```go
 myBool :=  true
@@ -539,7 +544,7 @@ fmt.Println(!myBool) // Esto retornará false
 
 ## El condicional if
 
-Se utiliza para que dada una condicion se cumpla, se ejecute un codigo.
+Se utiliza para que dada una condición se cumpla, se ejecute un código.
 
 ```go
 func main(){
@@ -590,7 +595,7 @@ func esPar(x int) string {
 
 ## Switch
 
-Cuando estas ejecutando múltiples condiciones if, una tras otra, se vuelve difícil de leer. Para eso se usa switch y volver un codigo mas legible.
+Cuando estas ejecutando múltiples condiciones if, una tras otra, se vuelve difícil de leer. Para eso se usa switch y volver un código mas legible.
 
 ```go
 func main(){
@@ -620,7 +625,7 @@ func main(){
 }
 ```
 
-### Switch sin condicion
+### Switch sin condición
 
 ```go
 func main(){
@@ -645,9 +650,9 @@ func main(){
 
 Sintaxis:
 
-defer (linea de codigo a ejecutar).
+defer (linea de código a ejecutar).
 
-Con defer, la linea de codigo que viene despues, se ejecutara al final de TODO, antes que ‘muera’ el programa.
+Con defer, la linea de codigo que viene después, se ejecutará al final de TODO, antes que ‘muera’ el programa.
 
 ```go
 func main(){
@@ -666,7 +671,7 @@ me ejecuto a lo ultimo de todo
 */
 ```
 
-se puede usar por ejemplo cuando abras una conexion con una base de datos, le colocas defer al cierre de esa conexion. Se usa para cerrar cosas.
+se puede usar por ejemplo cuando abras una conexión con una base de datos, le colocas defer al cierre de esa conexión. Se usa para cerrar cosas.
 
 ### Continue y break
 
@@ -770,7 +775,7 @@ slice := []int{0, 1, 2, 3, 4, 5, 6}
 fmt.Println(slice, len(slice), cap(slice)) // -->[0 1 2 3 4 5 6] 7 7
 ```
 
-Investigando: La diferencia principal entre los arrays es que estos tienen una longitud fija e invariable y deben declarase especifiandola
+Investigando: La diferencia principal entre los arrays es que estos tienen una longitud fija e invariable y deben declarase especificándola
 
 ```go
 x := [5]int{0, 1 ,2, 3, 4}
@@ -784,14 +789,14 @@ var x [ ]float64
 
 ```
 
-en este caso se crea un Slice con una longitud de cero Si queremos crear un slice deberiamos usar la funcion make:
+en este caso se crea un Slice con una longitud de cero Si queremos crear un slice deberíamos usar la función make:
 
 ```go
 x := make([]float64, 5)
 
 ```
 
-esto crea un Slice asociado a un array subjacente de longitud 5. Los Slices siempre están asociados a un array y aunque nunca pueden ser mas largos que el aray, pueden ser mas cortos. La función make también permite un tercer parámetro, que representa la capacidad del array, por lo que
+esto crea un Slice asociado a un array subyacente de longitud 5. Los Slices siempre están asociados a un array y aunque nunca pueden ser más largos que el aray, pueden ser más cortos. La función make también permite un tercer parámetro, que representa la capacidad del array, por lo que
 
 ```go
 x := make([]float64, 5, 10)
@@ -821,7 +826,7 @@ fmt.Println(slice[4:])//imprime desde el elem. 4
 
 ### Agregar elementos la slide
 
-Con metodo append
+Con método append
 
 agrega un elemento a lo ultimo.
 
@@ -856,9 +861,9 @@ for i , valor := range slice {
 
 ## LLave valor con Mapas
 
-En muchos lenguajes de programacion existen las estructuras ‘llave valor’ esto quiere decir que para acceder a un valor necesitas una llave.
+En muchos lenguajes de programación existen las estructuras ‘llave valor’ esto quiere decir que para acceder a un valor necesitas una llave.
 
-Por ejemplo: Un estacionamiento, en el cual, cada puesto tiene un numero asignado y para poder acceder al auto que tengas ahi guardado, necesitas esa llave, que es el numero de estacionamiento, y el valor seria lo que esta alli seleccionado.
+Por ejemplo: Un estacionamiento, en el cual, cada puesto tiene un número asignado y para poder acceder al auto que tengas ahi guardado, necesitas esa llave, que es el número de estacionamiento, y el valor seria lo que está allí seleccionado.
 
 Es como un objeto en javascript.
 
@@ -1021,7 +1026,7 @@ Este escenario es solo un ejemplo de cómo podríamos utilizar structs en la vid
 **Dato a tener en cuenta**
 
 <aside>
-💡 Por Que se uso este simbolo &?
+💡 Por Que se uso este símbolo &?
 
 En la línea **`actualizarSalario(&empleado1, 55000.0)`**, estamos pasando la dirección de memoria de la variable **`empleado1`** a la función **`actualizarSalario`**. Esto se hace utilizando el operador **`&`** antes del nombre de la variable (**`&empleado1`**).
 
@@ -1037,7 +1042,7 @@ Por lo tanto, usamos **`&empleado1`** para pasar un puntero a la estructura **`E
 
 Punteros: Acceso a la memoria, es decir, cuando guardamos una variable, se crea una dirección de memoria y a esa dirección se le guarda el valor de la variable.
 
-En el siguiente ejemplo. `a` y `b` comparten dirección de memoria. Le damos la misma direccion de memoria de `a` a `b`. Por el hecho de declararla e inicializarla asi: **`b := &a`**  . Para acceder al valor al que esta apuntando `b` utilizamos un `*` adelante de la variable, en este caso, `*b` .
+En el siguiente ejemplo. `a` y `b` comparten dirección de memoria. Le damos la misma dirección de memoria de `a` a `b`. Por el hecho de declararla e inicializarla así: **`b := &a`**  . Para acceder al valor al que está apuntando `b` utilizamos un `*` adelante de la variable, en este caso, `*b` .
 
 ```go
 func main(){
@@ -1050,7 +1055,7 @@ func main(){
 }
 ```
 
-Si modificamos el valor que esta apuntando a una direccion de memoria, las demas variables que esten apuntando a la misma direccion de memoria tmb cambiaran de valor.
+Si modificamos el valor que está apuntando a una dirección de memoria, las demás variables que estén apuntando a la misma dirección de memoria tmb cambiarán de valor.
 
 Por ejemplo: modificaremos `*b` y veamos que pasa con a.
 
